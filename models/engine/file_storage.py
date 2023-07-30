@@ -76,14 +76,3 @@ class FileStorage:
             if obj.id == id:
                 return obj
         return None
-
-    def count(self, cls=None):
-        """number of objects in storage matching the given class"""
-        if cls is not None:
-            new_dict = {}
-            for key, value in self.__objects.items():
-                if cls == value.__class__ or cls == value.__class__.__name__:
-                    new_dict[key] = value
-            return len(new_dict)
-
-        return len(self.__objects)
